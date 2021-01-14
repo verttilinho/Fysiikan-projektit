@@ -1,3 +1,10 @@
+'''
+KUVAUS
+
+Tässä analysoidaan pienhiukkasten muodostumiseen liittyvien
+laboratoriokokeiden tuloksia.
+'''
+
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec  8 00:09:50 2020
