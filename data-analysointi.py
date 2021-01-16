@@ -16,19 +16,18 @@ data = pd.read_excel("data.xlsx")
 #Poistaa Nan arvot
 data = data[data["E1"].notna()]
 
-
+#Tallennetaan halutut sarakkeet muuttujiksi
 #data.iloc[:0], ottaa ensimmäisen sarakkeen kaikki arvot
-dat1 = data.iloc[:,2]
-dat2 = data.iloc[:,3]
-dat3 = data.iloc[:,4]
-print(dat1)
-print(dat2)
+dat1 = data.iloc[:,0]
+dat2 = data.iloc[:,1]
+dat3 = data.iloc[:,2]
 
-#mean, std
+
+
 #keskiarvolista
 dat_avg = [np.average(k) for k in zip(dat2, dat3)]
 
-#Laskee saman alkion toistojen keskihajonnan
+#Laskee toistojen keskihajonnan
 dat_std = [np.std(k) for k in zip(dat2, dat3)]
 
 #keskiarvolistan keskiarvo
@@ -41,7 +40,7 @@ poly = np.poly1d(sovitus)
 X = np.linspace(0, 6, 1000)
 
 
-#virhekäyrät
+#virherajat
 
 alaraja = []
 for i in range(len(dat_avg)):
@@ -54,6 +53,7 @@ for i in range(len(dat_avg)):
     y = dat_avg[i] + dat_std[i]
     yläraja.append(y)
 
+#virhekäyrät
 sovitus_a = np.polyfit(dat1, alaraja, 1)
 poly_a = np.poly1d(sovitus_a)
 
