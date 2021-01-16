@@ -62,7 +62,7 @@ poly_y = np.poly1d(sovitus_y)
 
 
 
-#kuvaajat luodaan subplot, koska tällöin kuvaajia on helppo tehdä lisää
+#kuvaajat, luodaan subplot, koska tällöin kuvaajia on helppo tehdä lisää
 fig1, ax = plt.subplots(1, 1, figsize = [6, 4])
 
 ax.errorbar(dat1, dat_avg, yerr = dat_std, fmt = "o", label = "Virherajat")
