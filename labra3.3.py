@@ -50,10 +50,11 @@ B_maa_std = np.std(B_maa)
 #Virheen arviointia
 
 #Osittaisderivaattahomma, virheen kasautuminen
+
 def df(Is, Rs, theta):
-    dI_p = (8*N*constants.mu_0)/(np.sqrt(125)*Rs)*1/(math.tan(math.radians(theta)))*Ierr 
-    dR_p = -(8*N*constants.mu_0*Is)/(np.sqrt(125)*Rs**2)*1/(math.tan(math.radians(theta)))*Rerr
-    dtheta_p = -(8*N*constants.mu_0*Is)/(np.sqrt(125)*Rs)*1/((math.sin(math.radians(theta)))**2)*math.radians(kerr)
+    dI_p = (8*N*constants.mu_0)/(np.sqrt(125)*Rs)*1*Ierr 
+    dR_p = -(8*N*constants.mu_0*Is)/(np.sqrt(125)*Rs**2)*1*Rerr
+    dtheta_p = -(8*N*constants.mu_0*Is)/(np.sqrt(125)*Rs)*1*math.radians(kerr)
     d = math.sqrt((dI_p)**2 + (dR_p)**2 + (dtheta_p)**2)
     return d
 
